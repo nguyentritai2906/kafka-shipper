@@ -1,0 +1,16 @@
+name: release-please
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          token: ${{ secrets.ACTION_PERSONAL_ACCESS_TOKEN }}
+          release-type: python
+          package-name: release-please-action
